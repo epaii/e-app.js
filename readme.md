@@ -1,7 +1,7 @@
 # Eapp.js （e-app.js） 标准
 > 文始集团前端项目（`web`,`web-app`,`h5`,`混合开发`,`微信小程序`）常用组件命名标准
 
-## 特别感谢
+## 标准研究会组员
 [@宋阳](https://github.com/songyangphp) ,[@wutongshenyuan](https://github.com/wutongshenyuan)
 
 ## 支持列表
