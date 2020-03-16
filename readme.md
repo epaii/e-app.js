@@ -4,7 +4,7 @@
 ## 标准研究会组员
 [@apaii(会长)](https://github.com/epaii), [@宋阳](https://github.com/songyangphp) ,[@wutongshenyuan](https://github.com/wutongshenyuan)
 
-## 支持列表
+## 标准内容列表
 - [Eapp.localData 本地存储](#localData)
   - [set](#localData-set)
   - [get](#localData-get)
