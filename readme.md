@@ -1,10 +1,16 @@
 # Eapp.js （e-app.js） 标准
 > 文始集团前端项目（`web`,`web-app`,`h5`,`混合开发`,`微信小程序`）常用组件命名标准
 
+## 支持列表
+- [Eapp.localData](#localData)
+  - [set](#localData-set)
+  - get
+  - remove
+  - clear
 
 
 
-## 二 Eapp.localData
+## 二 <a id="localData">Eapp.localData</a>
 ### 本地存储方法，可用于存储类似于token的东西
 
 
@@ -17,7 +23,7 @@
 | clare  | 清除全部本地数据       |
 
 
-###   `Eapp.LocalData.set` 方法 
+###   <a id="localData-set">`Eapp.LocalData.set` 方法</a> 
 *表示向本地存储数据*
 
 *使用方法*
