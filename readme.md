@@ -2,7 +2,7 @@
 > 文始集团前端项目（`web`,`web-app`,`h5`,`混合开发`,`微信小程序`）常用组件命名标准
 
 ## 标准研究会组员
-[@epaii(会长)](https://github.com/epaii), [@宋阳](https://github.com/songyangphp) ,[@wutongshenyuan](https://github.com/wutongshenyuan)
+[@epaii(会长)](https://github.com/epaii), [@宋阳](https://github.com/songyangphp) ,[@wutongshenyuan](https://github.com/wutongshenyuan),[@zhangman0](https://github.com/zhangman0)
 
 ## 标准内容列表
 - [Eapp.localData 本地存储](#localData)
