@@ -2,11 +2,11 @@
 > 文始集团前端项目（`web`,`web-app`,`h5`,`混合开发`,`微信小程序`）常用组件命名标准
 
 ## 支持列表
-- [Eapp.localData](#localData)
+- [Eapp.localData 本地存储](#localData)
   - [set](#localData-set)
-  - get
-  - remove
-  - clear
+  - [get](#localData-get)
+  - [remove](#localData-remove)
+  - [clear](#localData-clear)
 
 
 
@@ -45,7 +45,7 @@ Eapp.LocalData.set(key, value);
 ```
 
 
-###  `Eapp.LocalData.get` 方法 
+###  <a id="localData-get">`Eapp.LocalData.get` 方法 </a>
 *表示获取已存储在本地的数据*
 
 *使用方法*
@@ -58,7 +58,7 @@ Eapp.LocalData.set(key, value);
 Eapp.LocalData.get(key);
 ```
 
-###  `Eapp.LocalData.remove` 方法
+###  <a id="localData-remove">`Eapp.LocalData.remove` 方法</a>
 *表示清除某一条本地数据*
 
 *使用方法*
@@ -73,7 +73,7 @@ Eapp.LocalData.remove(key);
 
 
 
-### `Eapp.LocalData.clear` 方法
+### <a id="localData-clear">`Eapp.LocalData.clear` 方法</a>
 *表示清除全部的本地数据*
 
 *使用方法*
