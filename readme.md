@@ -100,7 +100,7 @@ Eapp.ui.alert(function(){});
  * * @param data2 表示确定按钮字符
  */
 
-Eapp.ui.confirmt(‘确定’,'取消')
+Eapp.ui.confirmt(您确定要删除吗,onok,oncancel)
 ```
 
 
