@@ -541,6 +541,10 @@ console.log(Eapp.user.info("token"));
 
 ## 七 <a id="this">Eapp.this</a>
 当前项目特有的函数
+```JavaScript
 
+ Eapp.this.funa("这个项目的特有方法");
+
+```
 ## 八 <a id="require">Eapp.require</a>
 包含其他模块的方法
