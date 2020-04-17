@@ -34,6 +34,9 @@
   - [onload事件](#window-onload)
   - [onclose事件](#window-onclose)
   - [params属性](#window-params)
+- [Eapp.event 事件](#event)
+  - [on方法](#event-on)
+  - [emit方法](#event-emit)
 
 <!-- ## 灵活应用
   - 在模块化开发中，如果挂载再到全局变量中如 -->
@@ -63,7 +66,9 @@
  * 第一种方法 
  * @param object 自定义弹出层的样式及功能 {"key" : "value"}
  */
-Eapp.ui.alert({msg: ‘中间提示消息’, title:'标题提示'});
+Eapp.ui.alert({msg: ‘中间提示消息’, title:'标题提示'},function(){
+  
+});
 
 /**
  * 第二种方法
@@ -78,6 +83,7 @@ Eapp.ui.alert(‘操作完成’,function(){});
  * @callback  表示执行成功后的回调
  */
 Eapp.ui.alert(function(){});
+
 ```
 
 
@@ -123,10 +129,12 @@ Eapp.ui.stopLoading();
 ### <a id="ui-toast">`Eapp.ui.toast `方法</a>
 *表示弹出提示信息*
 
-*三种不同的公共样式 
-Eapp.ui.toast.success
-Eapp.ui.toast.fail
-Eapp.ui.toast.text*
+三种不同的公共样式 
+
+- Eapp.ui.toast.success
+- Eapp.ui.toast.fail
+- Eapp.ui.toast.text
+
 *使用方法*
 
 ```JavaScript
@@ -143,6 +151,8 @@ Eapp.ui.toast.success({msg: ‘中间消息’, title:'提示'});
 
  */
 Eapp.ui.toast.success(‘操作完成’);
+Eapp.ui.toast.fail(‘操作失败’);
+Eapp.ui.toast.text(提示);
 ```
 
 
@@ -158,7 +168,7 @@ Eapp.ui.toast.success(‘操作完成’);
 | area - 宽高 | 默认：auto 自适应     ['500px', '300px'] |
 
 
-## 二 <a id="Http">Eapp.Http</a>
+## 二 <a id="Http">Eapp.http</a>
 ### 请求数据
 目前支持
 
@@ -198,7 +208,7 @@ Eapp.Http.setBaseUrl(url);
  * @param data 要设置常用的请求数据 Object 形如 {"key" : "value"}
  */
 
-Eapp.Http.setBaseData(data);
+Eapp.http.setBaseData(data);
 ```
 
 ### <a id="Http-setHeader">`setHeader` 方法</a> 
@@ -210,7 +220,7 @@ Eapp.Http.setBaseData(data);
 /**
  * @param data 要设置的header Object 形如 {"key" : "value"}
  */
-Eapp.Http.setHeader(data);
+Eapp.http.setHeader(data);
 ```
 
 
@@ -228,7 +238,7 @@ Eapp.Http.setHeader(data);
 *使用方法*
 
 ```javascript
-Eapp.Http.post(url,data,function(data) {
+Eapp.http.post(url,data,function(data) {
   console.log(data);
 },function(data) {
   alert(data.msg);
@@ -238,16 +248,16 @@ Eapp.Http.post(url,data,function(data) {
 ### <a id="Http-get">`get` 方法</a> 
 *get请求*
 
-|  参数          |                备注                |
-|  :-----------  |  :-----------------------------:  |
-|  url            |  请求接口地址和数据  |
-|  function  |  请求成功的回调方法  |
-|  error        |  请求失败的回调方法  |
+| 参数     |        备注        |
+| :------- | :----------------: |
+| url      | 请求接口地址和数据 |
+| function | 请求成功的回调方法 |
+| error    | 请求失败的回调方法 |
 
 *使用方法*
 
 ```javascript
-Eapp.Http.get('url',function(data) {
+Eapp.http.get('url',function(data) {
   console.log(data);
 },function(data) {
   alert(data.msg);
@@ -260,17 +270,17 @@ Eapp.Http.get('url',function(data) {
 ### <a id="Http-Loading.post">`Loading.post` 方法</a> 
 *带loading效果的post请求*
 
-|参数|备注|
-|:---|:---:|
-|url|请求接口地址|
-|data|请求数据|
-|function|请求成功的回调方法|
-|error|请求失败的回调方法|
+| 参数     |        备注        |
+| :------- | :----------------: |
+| url      |    请求接口地址    |
+| data     |      请求数据      |
+| function | 请求成功的回调方法 |
+| error    | 请求失败的回调方法 |
 *使用方法*
 
 ```javascript
 // 带loading的post请求
-Eapp.Http.Loading.post('getdataurl',{ywid:11},function(data) {
+Eapp.http.loading.post('getdataurl',{ywid:11},function(data) {
   console.log(data);
 },function(data) {
   alert(data.msg);
@@ -281,18 +291,18 @@ Eapp.Http.Loading.post('getdataurl',{ywid:11},function(data) {
 
 *带loading效果的get请求*
 
-|参数|备注|
-|:---|:---:|
-|url|请求接口地址和数据|
-|function|请求成功的回调方法|
-|error|请求失败的回调方法|
+| 参数     |        备注        |
+| :------- | :----------------: |
+| url      | 请求接口地址和数据 |
+| function | 请求成功的回调方法 |
+| error    | 请求失败的回调方法 |
 
 *使用方法*
 
 ```javascript
 
 // 带loading的get请求
-Eapp.Http.Loading.get(url,function(data) {
+Eapp.http.Loading.get(url,function(data) {
   console.log(data);
 },function(data) {
   alert(data.msg);
@@ -315,7 +325,7 @@ Eapp.Http.Loading.get(url,function(data) {
 | clare  | 清除全部本地数据       |
 
 
-###   <a id="localData-set">`Eapp.LocalData.set` 方法</a> 
+###   <a id="localData-set">`Eapp.localData.set` 方法</a> 
 *表示向本地存储数据*
 
 *使用方法*
@@ -326,14 +336,14 @@ Eapp.Http.Loading.get(url,function(data) {
  * 第一种方法 
  * @param data 要存储的数据 Object 形如 {"key" : "value"}
  */
-Eapp.LocalData.set(data);
+Eapp.localData.set(data);
 
 /**
  * 第二种方法
  * @param key 要存储的数据的键
  * @param value 要存储的数据的值
  */
-Eapp.LocalData.set(key, value);
+Eapp.localData.set(key, value);
 ```
 
 
@@ -347,10 +357,10 @@ Eapp.LocalData.set(key, value);
  * @param key 要取出数据的键值
  */
 
-Eapp.LocalData.get(key);
+Eapp.localData.get(key);
 ```
 
-###  <a id="localData-remove">`Eapp.LocalData.remove` 方法</a>
+###  <a id="localData-remove">`Eapp.localData.remove` 方法</a>
 *表示清除某一条本地数据*
 
 *使用方法*
@@ -360,12 +370,12 @@ Eapp.LocalData.get(key);
  * @param key 要清除数据的键值
  */
 
-Eapp.LocalData.remove(key);
+Eapp.localData.remove(key);
 ```
 
 
 
-### <a id="localData-clear">`Eapp.LocalData.clear` 方法</a>
+### <a id="localData-clear">`Eapp.localData.clear` 方法</a>
 *表示清除全部的本地数据*
 
 *使用方法*
@@ -457,3 +467,39 @@ Eapp.window.params
 console.log(Eapp.window.params.id)
 console.log(Eapp.window.params.title)
 ```
+
+
+## 五<a id="event">Eapp.event</a>
+### 事件发送和接收，主要用于多页面或者或组件之间的信息交互
+
+
+目前支持
+| 方法                    | 作用                 |
+| :---------------------- | :------------------- |
+| on(name, callback)      | 监听事件             |
+| emit(name, data = null) | 发送事件（可带数据） |
+
+
+###   <a id="event-on">`Eapp.event.on` 方法</a> 
+*监听事件*
+
+*使用方法*
+
+```JavaScript
+
+Eapp.event.on("login",function(user){
+  console.log(user.token);
+})
+
+```
+
+
+###  <a id="event-emit">`Eapp.event.emit` 方法 </a>
+*触发事件*
+
+*使用方法*
+
+```javascript
+Eapp.event.emit("login",{token:"",uid:4})
+```
+ 
