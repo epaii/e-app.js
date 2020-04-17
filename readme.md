@@ -40,6 +40,8 @@
 - [Eapp.user 用户](#user)
   - [isLogin方法](#user-is-login)
   - [info方法](#user-info)
+- [Eapp.this 当前系统特有功能](#this)
+- [Eapp.require 包含其他模块](#require)
 <!-- ## 灵活应用
   - 在模块化开发中，如果挂载再到全局变量中如 -->
 
@@ -536,3 +538,9 @@ Eapp.event.emit("login",{token:"",uid:4})
 console.log(Eapp.user.info());
 console.log(Eapp.user.info("token"));
 ```
+
+## 七 <a id="this">Eapp.this</a>
+当前项目特有的函数
+
+## 八 <a id="require">Eapp.require</a>
+包含其他模块的方法
