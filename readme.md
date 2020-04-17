@@ -37,7 +37,9 @@
 - [Eapp.event 事件](#event)
   - [on方法](#event-on)
   - [emit方法](#event-emit)
-
+- [Eapp.user 用户](#user)
+  - [isLogin方法](#user-is-login)
+  - [info方法](#user-info)
 <!-- ## 灵活应用
   - 在模块化开发中，如果挂载再到全局变量中如 -->
 
@@ -497,9 +499,40 @@ Eapp.event.on("login",function(user){
 ###  <a id="event-emit">`Eapp.event.emit` 方法 </a>
 *触发事件*
 
-*使用方法*
-
 ```javascript
 Eapp.event.emit("login",{token:"",uid:4})
 ```
  
+
+
+## 六 <a id="user">Eapp.user</a>
+### 用户模块，包含是否登录授权，及当前用户信息
+
+
+目前支持
+| 方法      | 作用                           |
+| :-------- | :----------------------------- |
+| isLogin   | 是否登录                       |
+| info(key) | 用户信息，key为null 则返回所有 |
+
+
+###   <a id="user-is-login">`Eapp.user.isLogin` 方法</a> 
+
+*使用方法*
+
+```JavaScript
+
+ if(Eapp.user.isLogin())
+ {
+
+ }
+
+```
+
+
+###  <a id="user-info">`Eapp.user.info` 方法 </a>
+
+```javascript
+console.log(Eapp.user.info());
+console.log(Eapp.user.info("token"));
+```
